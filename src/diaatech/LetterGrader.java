@@ -13,6 +13,7 @@ public class LetterGrader {
 		 * < 60   F
 		 * any other input will not be considered and the program should output "invalid input" to console.
 		 */
+		int 
 
 	}
 
