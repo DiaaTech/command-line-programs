@@ -1,19 +1,39 @@
 package diaatech;
 
-public class LetterGrader {
+import java.util.Scanner;
+	
+	
+public class LetterGrader{
+	
+	public static void main(String args[]) {
+		System.out.println(findGrade(66));
+	}
 
-	public static void main(String[] args) {
+	public static String findGrade(int score) {
+		if (score < 0 || score >100)
+			return "invalid score";
+			
+		switch(score/10) {
+		case 10:
+		case 9:
+			return "A";
 		
-		/* Use switch to write a program that accepts a student total marks from 100
-		 * and displays the letter grade. Use below information to map mark ranges to grades
-		 * >= 90  A
-		 * >= 80  B
-		 * >= 70  C
-		 * >= 60  D
-		 * < 60   F
-		 * any other input will not be considered and the program should output "invalid input" to console.
-		 */
-
+		case 8:
+			return "B";
+			
+		case 7:
+			return "C";
+			
+		case 6:
+			return "D";
+			
+		case 5:
+			return "E";
+					
+		default:
+			return "F";
+					
+				}
 	}
 
 }
