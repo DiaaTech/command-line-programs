@@ -5,14 +5,20 @@ import java.util.Scanner;
 	
 public class LetterGrader{
 	
-	public static void main(String args[]) {
-		System.out.println(findGrade(66));
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("----------------------------");
+		System.out.println("Please enter numeric grade: ");
+		
+		int score = input.nextInt();
+		System.out.println(findGrade(score));
 	}
-
-	public static String findGrade(int score) {
-		if (score < 0 || score >100)
-			return "invalid score";
-			
+	
+	
+		public static String findGrade(int score) {
+			if (score < 0 || score >100)
+				return "invalid score";
+		
 		switch(score/10) {
 		case 10:
 		case 9:
@@ -21,7 +27,7 @@ public class LetterGrader{
 		case 8:
 			return "B";
 			
-		case 7:
+		case 7: 
 			return "C";
 			
 		case 6:
@@ -34,6 +40,6 @@ public class LetterGrader{
 			return "F";
 					
 				}
-	}
 
+}
 }
