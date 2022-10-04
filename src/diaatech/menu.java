@@ -7,16 +7,18 @@ import java.util.Scanner;
 public class menu {
 
 	public static void main(String[] args) {
+		  PhoneBook obj= new PhoneBook();
+		  Scanner input= new Scanner(System.in);
+		  String choice;
 		do { 
-			  PhoneBook obj= new PhoneBook();
-			  Scanner input= new Scanner(System.in);
+		
 			  System.out. println("A.add a contact");
 			  System.out. println("B.delete a contact");
 			  System.out. println("C.update a contact");
 			  System.out. println("D.display all contacts");
 			  System.out. println("E.search a contact");
 			  System.out. println("Q.exit application");
-			  String choice=input.next();
+			  choice=input.next();
 			
 			 
 			 switch(choice) {
@@ -31,9 +33,7 @@ public class menu {
 	           case "B":
 	           System.out.println("Enter Name");
 	           name=input.next();
-	           number = input.nextLong();
 	           obj.deleteContact(name);
-	           System.out.println("Contact Deleted successfully");
 	   	       break;
 	           case "C":
 	           System.out.println("Enter Name");
@@ -41,7 +41,6 @@ public class menu {
 	           System.out.println("Enter number");
 	           number = input.nextLong();
 	           obj.updateContact(name, number);
-	           System.out.println("Contact updated successfully");
 	   	       break;
 	           case "D":
 	   	         obj.showAll();
@@ -51,10 +50,12 @@ public class menu {
 	   	       name=input.next();
 	   	       obj.searchContact(name);
 	   	       break;
+	           case"Q":
+	        	   System.out.println("Enter Name");
 	           default:
-	   	       System.out.println("enter valid key");
+	        	   System.out.println("Enter valid option");
 		
 			}
-		}while (true) ;
+		}while (!choice.equalsIgnoreCase("Q")) ;
 	}
 }
