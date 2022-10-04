@@ -58,8 +58,8 @@ public class PhoneBook {
 	public void searchContact(String name) {
 		Set<String> thekeys = names.keySet();
 		for(String key : thekeys) {
-			if(names.containsKey(name)) {
-			System.out.println(names.get(key));
+			if(key.contains(name)) {
+			  System.out.println(key + ", " + names.get(key));
 			}
 		}
 		}
