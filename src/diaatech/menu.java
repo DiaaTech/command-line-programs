@@ -7,48 +7,54 @@ import java.util.Scanner;
 public class menu {
 
 	public static void main(String[] args) {
+		do { 
+			  PhoneBook obj= new PhoneBook();
+			  Scanner input= new Scanner(System.in);
+			  System.out. println("A.add a contact");
+			  System.out. println("B.delete a contact");
+			  System.out. println("C.update a contact");
+			  System.out. println("D.display all contacts");
+			  System.out. println("E.search a contact");
+			  System.out. println("Q.exit application");
+			  String choice=input.next();
+			
+			 
+			 switch(choice) {
+			  case "A" :
+			   System.out.println("Enter Name");
+		       String name = input.next();
+		       System.out.println("Enter number");
+		       Long number = input.nextLong();
+		       obj.addContact(name, number);
+		       System.out.println("Contact added successfully");
+	   	       break;
+	           case "B":
+	           System.out.println("Enter Name");
+	           name=input.next();
+	           number = input.nextLong();
+	           obj.deleteContact(name);
+	           System.out.println("Contact Deleted successfully");
+	   	       break;
+	           case "C":
+	           System.out.println("Enter Name");
+	           name=input.next();
+	           System.out.println("Enter number");
+	           number = input.nextLong();
+	           obj.updateContact(name, number);
+	           System.out.println("Contact updated successfully");
+	   	       break;
+	           case "D":
+	   	         obj.showAll();
+	   	         break;
+	           case "E":
+	   	       System.out.println("Enter Name");
+	   	       name=input.next();
+	   	       obj.searchContact(name);
+	   	       break;
+	           default:
+	   	       System.out.println("enter valid key");
 		
-		PhoneBook obj = new PhoneBook();
-		Scanner input = new Scanner(System.in);
-		System.out.println("a). Add a contact");
-		PhoneBook obj1 = new PhoneBook();
-		Scanner input1 = new Scanner(System.in);
-		System.out.println("b). Delete a contact");
-		Scanner input2 = new Scanner(System.in);
-		System.out.println("c). Update a contact");
-		Scanner input3 = new Scanner(System.in);
-		System.out.println("d). ShowAll contacts");
-		Scanner input4 = new Scanner(System.in);
-		System.out.println("e). Search a contact");
-		System.out.println("Please choose an option a-e: ");
-		String choice = input.next();
-		
-		switch (choice) {
-		case "a":
-			System.out.println("Enter Name");
-			String name = input.next();
-			System.out.println("Enter number");
-			Long number = input.nextLong();
-		    obj.addContact(name, number);
-		    break;
-		
-		case "b": 
-			Map<String,String> users = new HashMap<String,String>();
-			System.out.println("Enter Name");
-			String name1 = input1.next();
-			obj1.deleteContact(name1);
-			break;
-		
-		case "c":
-			System.out.println("Enter Name: ");
-			String name2 = input2.next();
-			System.out.println(name2);
-			obj.searchContact(choice);
-			System.out.println("update contact info here: ");
-			String name3 = input2.next();
-			Long number1 = input2.nextLong();
-			obj.updateContact(name3, number1);
-		
-	}
+			}
+		}while (true) ;
 	}
 }
